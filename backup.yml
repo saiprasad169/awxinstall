@@ -9,9 +9,9 @@
         state: dump
         target: /tmp/test{{ansible_date_time.date}}.sql
     - name: Send Backup to S3
-      s3:
-        #aws_access_key: AKIAY6LQVANXZ4QJ7P6O
-        #aws_secret_key: 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
+      aws_s3:
+        aws_access_key: AKIAY6LQVANXZ4QJ7P6O
+        aws_secret_key: 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
         bucket: test169
         src: /tmp/test{{ansible_date_time.date}}.sql
         object: test{{ansible_date_time.date}}.sql
