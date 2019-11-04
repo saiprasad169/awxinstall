@@ -4,7 +4,7 @@
   tasks:
   - name: Create a new database with name 'bobdata'
     mysql_db:
-      login_user: cloud
-      login_password: Sai.12345
+      #login_user: cloud
+      #login_password: Sai.12345
       name: bobdata
       state: present
