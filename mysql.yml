@@ -1,0 +1,9 @@
+---
+- hosts: 172.31.31.15
+  tasks:
+    - name: Create new databases with names 'foo' and 'bar'
+      mysql_db:
+        name:
+          - foo
+          - bar
+        state: present
