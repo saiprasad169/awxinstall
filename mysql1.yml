@@ -1,0 +1,10 @@
+---
+- hosts: 172.31.31.15
+  tasks:
+    - name: Backup Database
+      mysql_db:
+        name: test1
+        login_user: cloud
+        login_password: Sai.12345
+        state: dump
+        target: /tmp/dump.sql
