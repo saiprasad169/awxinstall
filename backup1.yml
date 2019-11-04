@@ -1,0 +1,18 @@
+---
+- hosts: 172.31.31.15
+  tasks:
+    - name: Backup Database
+      mysql_db:
+        name: test
+        login_user: root
+        login_password: Sai.12345
+        state: dump
+        target: /tmp/test.sql
+    - name: Send Backup to S3
+      s3:
+        aws_access_key: AKIAY6LQVANXZ4QJ7P6O
+        aws_secret_key: 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
+        bucket: test169
+        src: /tmp/test.sql
+        object: test.sql
+        mode: put
