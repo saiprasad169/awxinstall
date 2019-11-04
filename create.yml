@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+  - name: Create a new database with name 'bobdata'
+    mysql_db:
+      name: bobdata
+      state: present
