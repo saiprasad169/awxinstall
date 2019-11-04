@@ -4,7 +4,7 @@
     - name: Backup Database
       mysql_db:
         name: test
-        login_user: root
+        login_user: cloud
         login_password: Sai.12345
         state: dump
         target: /tmp/test{{ansible_date_time.date}}.sql
