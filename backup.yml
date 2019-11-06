@@ -7,12 +7,14 @@
         login_user: cloud
         login_password: Sai.12345
         state: dump
-        target: /tmp/test{{ansible_date_time.date}}.sql
+        target: /tmp/test{{ansible_date_time.date}}.sql.gz
+       
+    
     - name: Send Backup to S3
       aws_s3:
         aws_access_key: AKIAY6LQVANXZ4QJ7P6O
         aws_secret_key: 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
         bucket: test169
-        src: /tmp/test{{ansible_date_time.date}}.sql
-        object: test{{ansible_date_time.date}}.sql
+        src: /tmp/test{{ansible_date_time.date}}.sql.gz
+        object: test{{ansible_date_time.date}}.sql.gz
         mode: put
