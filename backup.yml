@@ -19,7 +19,7 @@
         object: test{{ansible_date_time.date}}.sql.gz
         mode: put
         
-    - name: Recursively remove directory
+    - name: Recursively remove 
       file:
-        path: /tmp/*.sql.gz
+        path: /tmp/test{{ansible_date_time.date}}.sql.gz
         state: absent
