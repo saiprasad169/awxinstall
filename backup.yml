@@ -15,6 +15,6 @@
         aws_access_key: AKIAY6LQVANXZ4QJ7P6O
         aws_secret_key: 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
         bucket: test169
-        src: /tmp/test{{ansible_date_time.date}}.sql
-        object: test{{ansible_date_time.date}}.sql
+        src: /tmp/test{{ansible_date_time.date}}.sql.gz
+        object: test{{ansible_date_time.date}}.sql.gz
         mode: put
