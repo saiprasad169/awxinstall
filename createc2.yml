@@ -1,12 +1,18 @@
 ---
-hosts: all
+hosts: 
 tasks:
   - ec2:
-      key_name: awx
-      instance_type: t2.micro
-      image: ami-04a2d6660f1296314
-      wait: yes
-      group: Wide-Open
-      count: 1
-      vpc_subnet_id: subnet-0bb038e558f49f681
-      assign_public_ip: yes
+    key_name: mykey
+    group: webserver
+    instance_type: m1.large
+    image: ami-6e649707
+    wait: yes
+    wait_timeout: 500
+    count: 5
+    volumes:
+    - device_name: /dev/sdb
+      snapshot: snap-abcdef12
+      volume_size: 10
+    monitoring: yes
+    vpc_subnet_id: subnet-29e63245
+    assign_public_ip: yes
