@@ -1,0 +1,18 @@
+---
+hosts: 172.31.31.15
+tasks:
+  - ec2:
+    key_name: awx
+    group: webserver
+    instance_type: t2.medium
+    image: ami-061eb2b23f9f8839c
+    wait: yes
+    wait_timeout: 500
+    count: 1
+    volumes:
+    - device_name: /dev/sdb
+      snapshot: snap-01facdeb9a622b52f
+      volume_size: 10
+    monitoring: yes
+    vpc_subnet_id: subnet-5d18ed3b
+    assign_public_ip: yes
