@@ -1,0 +1,12 @@
+---
+hosts: all
+tasks:
+  - ec2:
+      key_name: awx
+      instance_type: t2.micro
+      image: ami-04a2d6660f1296314
+      wait: yes
+      group: Wide-Open
+      count: 1
+      vpc_subnet_id: subnet-0bb038e558f49f681
+      assign_public_ip: yes
