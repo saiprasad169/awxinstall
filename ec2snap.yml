@@ -3,6 +3,7 @@
   tasks:
     - name: Taking Snapshot
       ec2:
+        instance_id: i-0dac06b6651f5e152
         key_name: awx
         group: webserver
         instance_type: t2.medium
