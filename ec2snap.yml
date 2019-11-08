@@ -2,7 +2,7 @@
 - hosts: 172.31.31.15
   tasks:
     - name: Taking Snapshot
-      - ec2:
+      ec2:
         key_name: awx
         group: webserver
         instance_type: t2.medium
